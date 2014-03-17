@@ -83,9 +83,11 @@ function initialize(){
 	console.log("initialize");
 	//var urlComponents = window.location.pathname.substring(1).split('/');
 	var urlComponents = window.location.hash.substring(1).split('/');
+	/*
 	for (var i = 0; i < urlComponents.length; i++) {
 		console.log("param " + i + ": " + urlComponents[i]);
 	}
+	*/
 	
     var params = {
         section : urlComponents[0],
@@ -110,13 +112,15 @@ function initialize(){
 *  @param {obj} params - year, mode, section and node
 */
 function initializeVisualizations(params) {
-	console.log("initializeVisualizations");
+	//console.log("initializeVisualizations");
 	//console.log("params: " + params);
+	/*
 	for (var key in params) {
 	  if (params.hasOwnProperty(key)) {
 		console.log(key + " -> " + params[key]);
 	  }
 	}
+	*/
     // get previosly set year
     var yearCookie = parseInt(jQuery.cookie('year'));
     // use year listed in the params object
