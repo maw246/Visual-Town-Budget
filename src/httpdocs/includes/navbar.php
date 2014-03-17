@@ -13,9 +13,11 @@
      <div onclick='window.location = "/"' class="entry homebutton"> Town Budget, Visualized </div>
 
      <div class="entry navbar-margin">
-        <span class="menubutton section margin" data-section="revenues"><a href="javascript:initializeVisualizations({section:'revenues'})">Revenues</a></span>
-        <span class="menubutton section margin" data-section="expenses"><a href="javascript:initializeVisualizations({section:'expenses'});">Expenses</a></span>
-        <span class="menubutton section margin" data-section="funds"><a href="javascript:initializeVisualizations({section:'funds'});">Funds &#38; Reserves</a></span>
+        <span class="menubutton section margin" data-section="revenues"><a href="javascript:initializeVisualizations({section:'revenues'});avb.home.hide();">Revenues</a></span>
+        <span class="menubutton section margin" data-section="expenses"><a href="javascript:initializeVisualizations({section:'expenses'});avb.home.hide();">Expenses</a></span>
+        <!--
+        <span class="menubutton section margin" data-section="funds"><a href="javascript:initializeVisualizations({section:'funds'});avb.home.hide();">Funds &#38; Reserves</a></span>
+        -->
     </div>
 
     <div class="entry" id="navbar-right" style="float:right;">
