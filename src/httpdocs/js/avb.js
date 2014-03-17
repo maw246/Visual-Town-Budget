@@ -80,7 +80,13 @@ Number.prototype.px = function () {
 *   initialization routines
 */
 function initialize(){
-    var urlComponents = window.location.pathname.substring(1).split('/');
+	console.log("initialize");
+	//var urlComponents = window.location.pathname.substring(1).split('/');
+	var urlComponents = window.location.hash.substring(1).split('/');
+	for (var i = 0; i < urlComponents.length; i++) {
+		console.log("param " + i + ": " + urlComponents[i]);
+	}
+	
     var params = {
         section : urlComponents[0],
         year : urlComponents[1],
@@ -104,6 +110,13 @@ function initialize(){
 *  @param {obj} params - year, mode, section and node
 */
 function initializeVisualizations(params) {
+	console.log("initializeVisualizations");
+	//console.log("params: " + params);
+	for (var key in params) {
+	  if (params.hasOwnProperty(key)) {
+		console.log(key + " -> " + params[key]);
+	  }
+	}
     // get previosly set year
     var yearCookie = parseInt(jQuery.cookie('year'));
     // use year listed in the params object
@@ -119,6 +132,7 @@ function initializeVisualizations(params) {
 
     // highlight current selection in navigation bar
     $('.section').each(function () {
+		$(this).removeClass('selected');
         if ($(this).data('section') === avb.section.toLowerCase()) {
             $(this).addClass('selected');
         }
@@ -195,9 +209,11 @@ window.onpopstate = popUrl;
 *
 */
 function pushUrl(section, year, mode, node) {
+	console.log("pushUrl");
     if (ie()) return;
     // format URL
-    var url = '/' + section + '/' + year + '/' + mode + '/' + node;
+    //var url = '/' + section + '/' + year + '/' + mode + '/' + node;
+    var url = '#' + section + '/' + year + '/' + mode + '/' + node;
     // create history object
     window.history.pushState({
         section: section,
@@ -213,6 +229,7 @@ function pushUrl(section, year, mode, node) {
 *   @param {state obj} event - object containing previous state
 */
 function popUrl(event) {
+	console.log("popUrl")
     if (ie()) return;
 
     if (event.state === null) {
