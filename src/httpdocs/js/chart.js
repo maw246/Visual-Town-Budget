@@ -274,7 +274,7 @@ avb.chart = function () {
          * x/y axes
          */
         var xAxis = d3.svg.axis().scale(chart.xscale)
-            .orient("bottom").tickSize(0, 0, 0).tickPadding(10)
+            .orient("bottom").tickSize(0, 0, 0).tickPadding(10).tickValues(d3.range(avb.firstYear,avb.lastYear+1))
             .tickFormat(function (d) {
                 return d;
             });

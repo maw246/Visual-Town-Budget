@@ -9,7 +9,7 @@
 
  
   <?php
-    $dataSections = array('revenues', 'expenses', 'funds');
+    $dataSections = array('revenues', 'expenses'); //, 'funds');
     require_once './includes/imports.php';
   ?>
 
@@ -22,7 +22,7 @@ $(document).ready(initialize);
 <body>
 
   <?php
-    require_once './includes/home.php';
+    //require_once './includes/home.php';
     require_once './includes/navbar.php';
     require_once './includes/container.php';
     require_once "./includes/footer.php";

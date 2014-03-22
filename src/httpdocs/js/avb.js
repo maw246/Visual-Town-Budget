@@ -48,7 +48,7 @@ avb.thisYear = avb.currentYear;
 // amount of yearly taxes spent by user
 avb.userContribution = null;
 // available data sections
-avb.sections = ['revenues', 'expenses', 'funds'];
+avb.sections = ['revenues', 'expenses']; //, 'funds'];
 // available modes (treemap, table..)
 avb.modes = 
 {
@@ -80,7 +80,7 @@ Number.prototype.px = function () {
 *   initialization routines
 */
 function initialize(){
-	console.log("initialize");
+	//console.log("initialize");
 	//var urlComponents = window.location.pathname.substring(1).split('/');
 	var urlComponents = window.location.hash.substring(1).split('/');
 	/*
@@ -165,7 +165,9 @@ function loadData() {
     });
 
     // initialize root level
+    //console.log("section: " + avb.section);
     avb.root = avb.data[avb.section];
+    
 
     // inialize year variables based on data
 
@@ -190,7 +192,7 @@ function loadData() {
     avb.navigation.initialize($(avb.modes[avb.mode].container), avb.root);
     avb.navigation.open(avb.root.hash);
 
-    console.log("UI Loaded.");
+    //console.log("UI Loaded.");
 }
 
 /*
@@ -213,7 +215,7 @@ window.onpopstate = popUrl;
 *
 */
 function pushUrl(section, year, mode, node) {
-	console.log("pushUrl");
+	//console.log("pushUrl");
     if (ie()) return;
     // format URL
     //var url = '/' + section + '/' + year + '/' + mode + '/' + node;
@@ -233,7 +235,7 @@ function pushUrl(section, year, mode, node) {
 *   @param {state obj} event - object containing previous state
 */
 function popUrl(event) {
-	console.log("popUrl")
+	//console.log("popUrl")
     if (ie()) return;
 
     if (event.state === null) {

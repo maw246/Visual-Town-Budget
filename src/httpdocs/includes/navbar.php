@@ -1,3 +1,6 @@
+<div id="header_disclaimer" class="disclaimer" style="color:white;background-image: url('./img/tophat_bg.jpg');background-repeat: repeat-x;height: 22px;margin: 0;min-width: 990px;padding: 0;text-align:center;">
+	<span>ArlingtonBudget.com is not an official website of Arlington County Government.</span>
+</div>
 
 <div class="purple-border" id="avb-menubar" >
   <div class="container">
