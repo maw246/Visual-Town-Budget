@@ -416,7 +416,7 @@ p {
 }
 /* line 72, ../../scss/partials/_chart.scss */
 .axis .odd {
-  fill: none;
+  /*fill: none;*/
 }
 /* line 76, ../../scss/partials/_chart.scss */
 .axis .thisYear {
